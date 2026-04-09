@@ -1,77 +1,33 @@
 {
   "name": "dashql",
-  "version": "0.0.2-dev.17",
-  "gitCommit": "",
+  "version": "0.1.0",
+  "description": "DashQL - A SQL-based dashboard query language and runtime",
   "private": true,
-  "type": "module",
-  "packageManager": "pnpm@10.33.0",
-  "dependencies": {
-    "@bufbuild/protobuf": "^2.11.0",
-    "flatbuffers": "25.9.23"
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "bazel build //...",
+    "test": "bazel test //...",
+    "lint": "eslint 'packages/**/*.{ts,tsx}'",
+    "format": "prettier --write 'packages/**/*.{ts,tsx,json,md}'",
+    "format:check": "prettier --check 'packages/**/*.{ts,tsx,json,md}'",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@bokuweb/zstd-wasm": "^0.0.27",
-    "@bufbuild/buf": "^1.67.0",
-    "@bufbuild/protobuf": "^2.11.0",
-    "@bufbuild/protoc-gen-es": "^2.11.0",
-    "@codemirror/commands": "^6.10.3",
-    "@codemirror/language": "^6.12.3",
-    "@codemirror/state": "^6.6.0",
-    "@codemirror/view": "^6.41.0",
-    "@dnd-kit/core": "^6.3.1",
-    "@dnd-kit/sortable": "^10.0.0",
-    "@dnd-kit/utilities": "^3.2.2",
-    "@eslint/js": "^10.0.1",
-    "@lezer/highlight": "^1.2.3",
-    "@primer/behaviors": "^1.10.2",
-    "@primer/octicons-react": "^19.23.1",
-    "@react-hook/resize-observer": "^2.0.2",
-    "@tauri-apps/api": "^2.10.1",
-    "@tauri-apps/cli": "^2.10.1",
-    "@tauri-apps/plugin-deep-link": "^2.4.8",
-    "@tauri-apps/plugin-dialog": "^2.7.0",
-    "@tauri-apps/plugin-fs": "^2.5.0",
-    "@tauri-apps/plugin-http": "^2.5.8",
-    "@tauri-apps/plugin-log": "^2.8.0",
-    "@tauri-apps/plugin-os": "^2.3.2",
-    "@tauri-apps/plugin-process": "^2.3.1",
-    "@tauri-apps/plugin-shell": "^2.3.5",
-    "@tauri-apps/plugin-updater": "^2.10.1",
-    "@types/d3": "^7.4.3",
-    "@types/node": "^24.12.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "apache-arrow": "^21.1.0",
-    "d3": "^7.9.0",
-    "dexie": "^4.4.2",
-    "eslint": "^10.2.0",
-    "flatbuffers": "^25.9.23",
-    "framer-motion": "^12.38.0",
-    "immutable": "^5.1.5",
-    "jsdom": "^29.0.1",
-    "oauth-pkce": "^0.0.7",
-    "prettier": "^3.8.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-router-dom": "^7.14.0",
-    "react-window": "^2.2.7",
-    "style-mod": "^4.1.3",
-    "typescript": "^6.0.2",
-    "typescript-eslint": "^8.58.0",
-    "typescript-plugin-css-modules": "^5.2.0",
-    "vite": "^8.0.3",
-    "vitest": "^4.1.2",
-    "vite-plugin-checker": "^0.12.0"
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.4.0"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@bufbuild/buf",
-      "@parcel/watcher"
-    ]
+  "engines": {
+    "node": ">=20.0.0",
+    "yarn": ">=4.0.0"
   },
-  "browserslist": [
-    "last 1 version",
-    "> 1%"
-  ]
+  "packageManager": "yarn@4.1.1"
 }
