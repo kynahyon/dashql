@@ -1,61 +1,66 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "bundler",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "isolatedModules": true,
-        "strict": true,
-        "jsx": "react-jsx",
-        "paths": {
-            "@ankoh/dashql-flatbuf": [
-                "./bazel-bin/packages/dashql-app/dependencies/dashql-flatbuf"
-            ],
-            "@ankoh/dashql-flatbuf/*": [
-                "./bazel-bin/packages/dashql-app/dependencies/dashql-flatbuf/*"
-            ],
-            "@ankoh/dashql-protobuf": [
-                "./bazel-bin/packages/dashql-app/dependencies/dashql-protobuf"
-            ],
-            "@ankoh/dashql-protobuf/*": [
-                "./bazel-bin/packages/dashql-app/dependencies/dashql-protobuf/*"
-            ],
-            "@ankoh/dashql-corek": [
-                "./packages/dashql-core/api"
-            ],
-            "@ankoh/dashql-core/*": [
-                "./packages/dashql-core/api/*"
-            ],
-            "@ankoh/dashql-svg-symbols": [
-                "./bazel-bin/packages/dashql-app/dependencies/svg-symbols/symbols.generated.svg"
-            ]
-        },
-        "types": [
-            "node",
-            "vitest/globals"
-        ],
-        "lib": [
-            "es6",
-            "es2020",
-            "dom"
-        ],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "plugins": [
-            {
-                "name": "typescript-plugin-css-modules"
-            }
-        ]
+  "compilerOptions": {
+    // Target modern JavaScript environments
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+    // Strict type checking
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    // Additional checks
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+ns": true,
+    asesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Module resolution
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+
+    // Source maps for debugging
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Output
+    "outDir": "./dist",
+    "rootDir": "./packages",
+
+    // JSX support for React components
+    "jsx": "react-jsx",
+
+    // Path aliases
+    "baseUrl": ".",
+    "paths": {
+      "@dashql/core": ["packages/core/src/index.ts"],
+      "@dashql/app": ["packages/app/src/index.ts"],
+      "@dashql/proto": ["packages/proto/src/index.ts"]
     },
-    "include": [
-        "packages/dashql-app/src/**/*",
-        "packages/dashql-app/test/**/*.ts",
-        "packages/dashql-app/*.ts",
-        "packages/dashql-app/bundles/*.ts",
-        "packages/dashql-app/types/*.d.ts"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+
+    // Skip lib checks for faster compilation
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "packages/**/*.ts",
+    "packages/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "bazel-*"
+  ]
 }
