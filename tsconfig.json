@@ -16,15 +16,13 @@
     "alwaysStrict": true,
 
     // Additional checks
-    "noUnusedLocals": true,
+    " true,
     "noUnusedParameters": true,
-ns": true,
-    asesInSwitch": true,
+    "noFallthroughCasesInSwitch": true,
     "exactOptionalPropertyTypes": true,
 
     // Module resolution
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
+    "resoln    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": true,
 
