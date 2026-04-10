@@ -10,6 +10,7 @@
     "build": "bazel build //...",
     "test": "bazel test //...",
     "lint": "eslint 'packages/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix 'packages/**/*.{ts,tsx}'",
     "format": "prettier --write 'packages/**/*.{ts,tsx,json,md}'",
     "format:check": "prettier --check 'packages/**/*.{ts,tsx,json,md}'",
     "typecheck": "tsc --noEmit"
