@@ -17,11 +17,12 @@
 
     // Additional checks
     "noUnusedLocals": true,
-    usedParameters": true,
+    "UnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "exact
+    "exactionalPropertyTypes": true,
 
-    // Module resolutionSyntheticDefaultImports": true,
+    // Module resolution
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": true,
 
