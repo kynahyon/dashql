@@ -17,9 +17,9 @@
 
     // Additional checks
     "noUnusedLocals": true,
-    "UnusedParameters": true,
+    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "exactionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": true,
 
     // Module resolution
     "allowSyntheticDefaultImports": true,
