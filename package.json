@@ -15,7 +15,8 @@
     "format:check": "prettier --check 'packages/**/*.{ts,tsx,json,md}'",
     "typecheck": "tsc --noEmit",
     "clean": "bazel clean",
-    "clean:full": "bazel clean --expunge"
+    "clean:full": "bazel clean --expunge",
+    "dev": "bazel run //packages/app:dev_server"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
